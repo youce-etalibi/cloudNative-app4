@@ -11,8 +11,8 @@ dotenv.config();
 
 mongoose
     .connect(process.env.URL_MONGOOSE)
-    .then(()=>console.log(`Server is Connected A mongodb`))
-    .catch((err)=>console.log(`Server Failed A connected `,err));
+    .then(()=>console.log('serv bien connecte'))
+    .catch((error)=>console.log(`errpr ${error}`));
 
 const app =express();
 app.use(express.json());
@@ -24,5 +24,5 @@ app.use('/restaurant',RestaurantPath);
 app.use('/Auth',AuthPath);
 
 
-const PORT =process.env.PORT || 3000;
-app.listen(PORT,()=>console.log(`Server is runing on ${PORT}`));
+const PORT =process.env.PORT;
+app.listen(PORT,()=>console.log(`localhost:${PORT}`));

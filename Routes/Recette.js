@@ -52,10 +52,10 @@ router.delete('/delete/:id',AsyncHandler(
         const  newRecetteDelete= await Recette.findById(req.params.id);
         if(newRecetteDelete){
             await Recette.findByIdAndDelete(req.params.id);
-            res.status(200).json({message:'Recette Has Deleted'});
+            res.status(200).json({message:'Recette bien supprime'});
         }
         else{
-            res.status(404).json({message:'Recette Not Found'});
+            res.status(404).json({message:'Recette makinchi'});
         }
     }
 ))

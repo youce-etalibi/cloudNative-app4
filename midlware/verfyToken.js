@@ -10,14 +10,12 @@ function verfyToken(req,res,next){
             req.user=decoded;
             next();
         } catch (error) {
-            res.status(401).json({message:'Invalid Token'})
+            res.status(401).json({message:'Token ghalat'})
         }
     }
     else{
-        return res.status(403).json({messgae:'Le token est obligatoire pour Voir Les Restaurants'})
+        return res.status(403).json({messgae:'token obli'})
     }
 }
 
-module.exports={
-    verfyToken
-}
+module.exports={ verfyToken }

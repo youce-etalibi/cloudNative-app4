@@ -52,10 +52,10 @@ router.delete('/delete/:id',AsyncHandler(
         const  newUserDelete= await User.findById(req.params.id);
         if(newUserDelete){
             await User.findByIdAndDelete(req.params.id);
-            res.status(200).json({message:'User Has Deleted'});
+            res.status(200).json({message:'User bien supprime'});
         }
         else{
-            res.status(404).json({message:'User Not Found'});
+            res.status(404).json({message:'User makinchi'});
         }
     }
 ))

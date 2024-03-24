@@ -52,10 +52,10 @@ router.delete('/delete/:id',AsyncHandler(
         const  newChefDelete= await Chef.findById(req.params.id);
         if(newChefDelete){
             await Chef.findByIdAndDelete(req.params.id);
-            res.status(200).json({message:'Chef Has Deleted'});
+            res.status(200).json({message:'Chef bien supprime'});
         }
         else{
-            res.status(404).json({message:'Chef Not Found'});
+            res.status(404).json({message:'Chef makinchi'});
         }
     }
 ))

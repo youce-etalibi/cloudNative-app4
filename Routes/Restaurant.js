@@ -65,10 +65,10 @@ router.delete('/delete/:id',AsyncHandler(
         const  newRestaurantDelete= await Restaurant.findById(req.params.id);
         if(newRestaurantDelete){
             await Restaurant.findByIdAndDelete(req.params.id);
-            res.status(200).json({message:'Restaurant Has Deleted'});
+            res.status(200).json({message:'Restaurant bien supprime'});
         }
         else{
-            res.status(404).json({message:'Restaurant Not Found'});
+            res.status(404).json({message:'Restaurant makinchi'});
         }
     }
 ))
